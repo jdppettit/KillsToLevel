@@ -3,7 +3,7 @@ KillsToLevel = {}
 KillsToLevel.name = "KillsToLevel"
 
 function KillsToLevel.onExperienceGain(event, reason, level, previousExperience, currentExperience)
-  if reason == PROGRESS_REASON_KILL then
+  if reason == PROGRESS_REASON_KILL and level < 50 then
     local experienceGained = currentExperience - previousExperience;
     local experienceInLevel = GetNumExperiencePointsInLevel(level);
     local experienceToGo = experienceInLevel - currentExperience;
